@@ -12,7 +12,7 @@ gem "autoprefixer-rails"
 gem "bootsnap", require: false
 gem "honeybadger"
 gem "pg"
-gem "puma"
+gem 'puma', '~> 4.0'
 gem "rack-canonical-host"
 gem "rails", "~> 6.1.0"
 gem "recipient_interceptor"
@@ -27,7 +27,7 @@ gem "hotwire-rails", "~> 0.1.0"
 group :development do
   gem "listen"
   gem 'web-console', '>= 4.1.0'
-  gem 'capistrano3-puma'
+  gem 'capistrano3-puma', '~> 4.0'
   gem 'capistrano', '~> 3.15',  require: false
   gem 'capistrano-rails', '~> 1.6',  require: false
   gem 'rvm1-capistrano3', require: false
