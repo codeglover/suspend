@@ -1,61 +1,34 @@
-# server-based syntax
-# ======================
-# Defines a single server with a list of roles and multiple properties.
-# You can define all roles on a single server, or split them:
+set :deploy_to, '/home/ubuntu/www/suspend'
+set :stage, :production
+set :rails_env, :production
+set :branch, "main"
+set :template_dir, '/home/ubuntu/www/suspend/shared/config'
+set :user, "ubuntu"
 
-# server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
-# server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
-# server "db.example.com", user: "deploy", roles: %w{db}
-
-
-
-# role-based syntax
-# ==================
-
-# Defines a role with one or multiple servers. The primary server in each
-# group is considered to be the first unless any hosts have the primary
-# property set. Specify the username and a domain or IP for the server.
-# Don't use `:all`, it's a meta role.
-
-# role :app, %w{deploy@example.com}, my_property: :my_value
-# role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
-# role :db,  %w{deploy@example.com}
+server "13.59.247.115", user: "ubuntu", roles: %w{web app db}, primary: true
+#server "landlady.me", user: "travis", roles: %w{web app db}, primary: true
+set :passenger_restart_with_touch, true
 
 
 
-# Configuration
-# =============
-# You can set any configuration variable like in config/deploy.rb
-# These variables are then only loaded and set in this stage.
-# For available Capistrano configuration variables see the documentation page.
-# http://capistranorb.com/documentation/getting-started/configuration/
-# Feel free to add new variables to customise your setup.
+# set :bundle_env_variables, { "http_proxy" => "http://192.168.49.1:8000", "HTTP_PROXY" => "http://192.168.49.1:8000" }
+proxy = "/usr/local/bin/corkscrew 192.168.49.1 8000 %h %p"
+set :ssh_options, {
+    keys: %w(/Users/eminencehc/.ssh/knife.pem),
+    forward_agent: true,
+    auth_methods: %w(publickey),
+    port: 22,
+    proxy: Net::SSH::Proxy::Command.new(proxy)
+}
 
 
-
-# Custom SSH Options
-# ==================
-# You may pass any option but keep in mind that net/ssh understands a
-# limited set of options, consult the Net::SSH documentation.
-# http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start
-#
-# Global options
-# --------------
-#  set :ssh_options, {
-#    keys: %w(/home/user_name/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
-#
-# The server-based syntax can be used to override options:
-# ------------------------------------
-# server "example.com",
-#   user: "user_name",
-#   roles: %w{web app},
-#   ssh_options: {
-#     user: "user_name", # overrides user setting above
-#     keys: %w(/home/user_name/.ssh/id_rsa),
-#     forward_agent: false,
-#     auth_methods: %w(publickey password)
-#     # password: "please use keys"
-#   }
+# LetsEncrypt
+shared_path = "/home/travis/letsencrypt/"
+set :letsencrypt_contact_email, 'easyvrmanager@gmail.com'
+set :letsencrypt_dir, "#{shared_path}/config/letsencrypt"
+set :letsencrypt_endpoint, 'https://acme-v01.api.letsencrypt.org/'
+set :letsencrypt_private_key_path, "#{fetch(:letsencrypt_dir)}/private_key.pem"
+# 'www.easyvrmanager.com easyvrmanager.com www.halfdomehideaway.com halfdomehideaway.com halfdomehideaway.easyvrmanager.com'
+set :keep_releases, 5
+#set :letsencrypt_authorize_domains, all_domains
+#set :letsencrypt_certificate_request_domains, all_domains
