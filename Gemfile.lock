@@ -311,6 +311,7 @@ DEPENDENCIES
   rack-canonical-host
   rails (~> 6.1.0)
   recipient_interceptor
+  redis (~> 4.0)
   rvm1-capistrano3
   sassc-rails
   skylight

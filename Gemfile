@@ -23,6 +23,7 @@ gem "title"
 gem "tzinfo-data", platforms: [:mingw, :x64_mingw, :mswin, :jruby]
 gem "webpacker"
 gem "hotwire-rails", "~> 0.1.0"
+gem 'redis', '~> 4.0'
 
 group :development do
   gem "listen"

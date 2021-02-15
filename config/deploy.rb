@@ -72,7 +72,7 @@ namespace :deploy do
 
   task :delete_public_assets_shared do
     on roles(:web) do
-      execute("rm -rf /home/ubuntu/www/rails6/shared/public/assets")
+      execute("rm -rf /home/ubuntu/www/suspend/shared/public/assets")
     end
   end
   task :delete_public_assets do
