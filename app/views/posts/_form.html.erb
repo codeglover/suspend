@@ -1,27 +1,21 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<%= form_with(model: post, id: dom_id(post), class: "needs-validation", data: {controller: "form"}) do |form| %>
+    <h5 class="mb-3">New Post</h5>
+    <div class="row g-3">
+      <div class="field col-sm-6">
+        <%= form.label :title, class: "form-label" %>
+        <%= form.text_field :title, required: true, class: "form-control form-control-md" %>
+      </div>
+      <div class="field col-sm-6">
+        <%= form.label :publish_date %>
+        <%= form.date_select :publish_date, class: "form-control form-control-md" %>
+      </div>
+      <hr class="my-4">
+      <div class="actions">
+        <%= form.submit class: "w-100 left btn btn-primary btn-lg submit-button" %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :publish_date %>
-    <%= form.date_select :publish_date %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
+
+
+
+

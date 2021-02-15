@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   def index
     @posts = Post.all
+    @post = Post.new
   end
 
   # GET /posts/1
@@ -22,27 +23,50 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to posts_url, notice: 'Post was successfully created.' }
+        format.json { render :show, status: :created, location: @post }
+      else
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(@post, partial: "posts/form", locals: { post: @post}) }
+        format.html { render :new }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
-    if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
-    else
-      render :new
+  def update
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html { redirect_to @post, notice: "Post was successfully updated." }
+        format.json { render :show, status: :ok, location: @post }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   # PATCH/PUT /posts/1
   def update
-    if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.'
-    else
-      render :edit
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html { redirect_to @post, notice: "Post was successfully updated." }
+        format.json { render :show, status: :ok, location: @post }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   # DELETE /posts/1
   def destroy
     @post.destroy
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    respond_to do |format|
+      format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
+      format.json { head :no_content }
+    end
   end
 
   private
