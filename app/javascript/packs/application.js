@@ -8,7 +8,6 @@ require("@hotwired/turbo-rails")
 require("@rails/activestorage").start()
 require("channels")
 require("stylesheets/application.scss")
-require("rouge")
 
 // require("@rails/ujs").start()
 // require("@rails/activestorage").start()
