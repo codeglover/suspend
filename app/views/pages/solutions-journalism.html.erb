@@ -1,4 +1,10 @@
-<div class="mx-5 min-h-screen grid place-content-center">
+<%#= render "posts/code_sample" %>
+<%# require 'coderay' %>
+<%#= CodeRay.scan('puts "Hello, world!"', :ruby).div %>
+<%#= render "posts/code_sample", language: :ruby %>
+
+<%#= raw(markdown("hey")) %>
+<div class="mt-10 min-h-full grid place-content-center">
   <div class="bg-gradient-to-r from-blue-400 to-indigo-500 rounded-2xl text-white p-8 text-center h-72 max-w-sm mx-auto">
     <h1 class="text-3xl mb-3">Hi George</h1>
     <p class="text-lg">You can contact us whenever you need help or just curious about something.</p>
@@ -12,9 +18,140 @@
   </div>
 </div>
 
+  <div class="mx-10 overflow-auto smalltext mx-5 min-h-screen grid place-content-stretch self-center">
+    <%= raw rouge_markdown(<<-'EOF'
+```ruby
+class ApplicationController < ActionController::Base
+  include SentientController
+  include Google::Webfonts::Helper
+
+  protect_from_forgery prepend: true, with: :exception
+  #load_and_authorize_resource unless: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  before_action :set_current_account
+  before_action :set_current_account_current
+  before_action :set_current_global
+  before_action :set_gon_variables
+  helper_method :current_account
+  helper_method :current_global
+  def current_account
+    return unless session[:current_account_id]
+    @current_account ||= Account.find(session[:current_account_id])
+  end
+
+  def set_gon_variables
+    gon.google_analytics_id = current_global.google_analytics_id
+  end
+
+  def current_global
+    return unless session[:current_global_id]
+    @current_global ||= Global.find(session[:current_global_id])
+  end
+
+  before_action do
+    resource = controller_name.singularize.to_sym
+    method = "#{resource}_params"
+    params[resource] &&= send(method) if respond_to?(method, true)
+  end
+
+  def respond_modal_with(*args, &blk)
+    options = args.extract_options!
+    options[:responder] = ModalResponder
+    respond_with *args, options, &blk
+  end
+
+  def custom_style
+    style = "color: #{current_global.theme_link_color};"
+    "#{style}"
+  end
+
+  def dhalang
+    binary_pdf = Dhalang::PDF.get_from_url("https://www.glovertravis.com")
+    send_data(binary_pdf, filename: 'pdfofgoogle.pdf', type: 'application/pdf')
+  end
+
+  def require_account!
+    redirect_to root_url(domain: nil) if current_account.nil?
+  end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to main_app.root_url, alert: exception.message
+  end
+
+  rescue_from Braintree::ConfigurationError do |exception|
+    # exception.message
+    # edit_subscription_path(id: @current_account.subscriptions.last.id)
+    redirect_to main_app.root_url, alert: "You must link a bank account."
+  end
+
+  def after_sign_in_path_for(user)
+    subdomain = user.accounts.last.subdomain
+    if request.original_url.include?("#{Figaro.env.base_title}")
+      root_url(subdomain: subdomain)
+    else
+      root_url
+    end
+  end
+
+  protected
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :subdomain,
+    :email, :phone, :country, :name, :current_account_id, account_attributes: [:domain]])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:edit_type, :first_name,
+    :last_name, :subdomain, :email, :phone, :country,
+    bank_attributes: [:bank_name, :bank_account], account_attributes: [:domain]])
+  end
+
+  private
+  def set_current_account_current
+    Current.account = current_account
+  end
+  def set_current_account
+    if current_user.present?
+      # if a user is signed in, use its account
+      current_account = current_user.accounts.last
+    else
+      # check if domain is present
+      if request.domain.present?
+        arr = request.domain.split('.')
+        if request.domain != Figaro.env.current_domain && request.domain != "www.#{Figaro.env.current_domain}"
+          domains = Domain.where(sld: "#{arr.first}", tld: "#{arr.last}")
+          domains = LinkedDomain.where(sld: "#{arr.first}", tld: "#{arr.last}") if domains.blank?
+          if domains.present?
+            current_account = domains.first.account
+          else
+            current_account = nil
+          end
+        end
+      end
+      # if no domain found, check for subdomain
+      current_account = Account.find_by(subdomain: request.subdomain) if Account.all.pluck(:subdomain).include?(request.subdomain) if current_account.blank?
+      # If no current_account found from either subdomain or domain
+      if current_account.blank?
+        account = Account.find(1)
+        if account.present?
+          current_account = account
+        end
+      end
+    end
+    session[:current_account_id] = current_account.id
+    # return current_account
+  end
+  def set_current_global
+    session[:current_global_id] = current_account.global.id
+  end
+
+end
+
+```
+            EOF
+            ) %>
+  </div>
+
 <div class="bg-white">
   <div class="max-w-xl mx-auto p-8">
-    <div class="flow-root">
+    <div class="grid">
       <ul class="-mb-8">
 
         <li>
@@ -181,29 +318,29 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script>
-  const likeButton = document.querySelector("#likeButton");
-  const addToCartButton = document.querySelector("#addToCartButton");
-  likeButton.addEventListener("click", ()=>{
-    likeButton.classList.toggle("text-red-400")
-  })
-  addToCartButton.addEventListener("click", ()=>{
-    const Toast = Swal.mixin({
-          toast: true,
-          position: 'top-end',
-          showConfirmButton: false,
-          timer: 3000,
-          timerProgressBar: true,
-          didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-    toast.addEventListener('mouseleave', Swal.resumeTimer)
-  }
-  })
-
-  Toast.fire({
-    icon: 'success',
-    title: 'Added to cart'
-  })
-  })
-
-</script>
+<!--<script>-->
+<!--//  const likeButton = document.querySelector("#likeButton");-->
+<!--//  const addToCartButton = document.querySelector("#addToCartButton");-->
+<!--//  likeButton.addEventListener("click", ()=>{-->
+<!--//    likeButton.classList.toggle("text-red-400")-->
+<!--//  })-->
+<!--//  addToCartButton.addEventListener("click", ()=>{-->
+<!--//    const Toast = Swal.mixin({-->
+<!--//          toast: true,-->
+<!--//          position: 'top-end',-->
+<!--//          showConfirmButton: false,-->
+<!--//          timer: 3000,-->
+<!--//          timerProgressBar: true,-->
+<!--//          didOpen: (toast) => {-->
+<!--//          toast.addEventListener('mouseenter', Swal.stopTimer)-->
+<!--//    toast.addEventListener('mouseleave', Swal.resumeTimer)-->
+<!--//  }-->
+<!--//  })-->
+<!--//-->
+<!--//  Toast.fire({-->
+<!--//    icon: 'success',-->
+<!--//    title: 'Added to cart'-->
+<!--//  })-->
+<!--//  })-->
+<!--//-->
+<!--</script>-->

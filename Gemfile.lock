@@ -213,9 +213,11 @@ GEM
       ffi (~> 1.0)
     recipient_interceptor (0.2.0)
       mail
+    redcarpet (3.5.1)
     redis (4.2.5)
     regexp_parser (2.0.3)
     rexml (3.2.4)
+    rouge (3.26.0)
     rvm1-capistrano3 (1.4.0)
       capistrano (~> 3.0)
       sshkit (>= 1.2)
@@ -299,7 +301,6 @@ DEPENDENCIES
   capistrano-rails-logs-tail
   capistrano-sidekiq (~> 1)
   capistrano3-puma (~> 4.0)
-  coderay
   formulaic
   honeybadger
   hotwire-rails (~> 0.1.0)
@@ -312,7 +313,9 @@ DEPENDENCIES
   rack-canonical-host
   rails (~> 6.1.0)
   recipient_interceptor
+  redcarpet
   redis (~> 4.0)
+  rouge
   rvm1-capistrano3
   sassc-rails
   skylight
