@@ -24,6 +24,7 @@ gem "tzinfo-data", platforms: [:mingw, :x64_mingw, :mswin, :jruby]
 gem "webpacker"
 gem "hotwire-rails", "~> 0.1.0"
 gem 'redis', '~> 4.0'
+gem "coderay"
 
 group :development do
   gem "listen"
@@ -39,6 +40,7 @@ group :development do
   gem 'capistrano-rails-console', require: false
   gem 'capistrano-sidekiq', '~> 1', group: :development
   gem 'capistrano-rails-logs-tail'
+
 end
 
 group :development, :test do

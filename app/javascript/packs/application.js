@@ -4,9 +4,10 @@
 // that code so it'll be compiled.
 
 require("@hotwired/turbo-rails")
-require("@rails/ujs").start()
+// require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
+require("stylesheets/application.scss")
 
 // require("@rails/ujs").start()
 // require("@rails/activestorage").start()

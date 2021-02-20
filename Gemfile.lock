@@ -299,6 +299,7 @@ DEPENDENCIES
   capistrano-rails-logs-tail
   capistrano-sidekiq (~> 1)
   capistrano3-puma (~> 4.0)
+  coderay
   formulaic
   honeybadger
   hotwire-rails (~> 0.1.0)
