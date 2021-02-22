@@ -46,8 +46,8 @@
       <file leaf-file-name="solutions-journalism.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pages/solutions-journalism.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="75" column="30" selection-start-line="73" selection-start-column="24" selection-end-line="75" selection-end-column="30" />
+            <state relative-caret-position="120">
+              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -56,10 +56,10 @@
       <file leaf-file-name="production.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+            <state relative-caret-position="390">
+              <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
               <folding>
-                <marker date="1614019693315" expanded="true" signature="0:5734" placeholder="..." />
+                <marker date="1614019895842" expanded="true" signature="0:5732" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -527,12 +527,12 @@
       <updated>1613262296718</updated>
       <workItem from="1613262297889" duration="36759000" />
       <workItem from="1614019350914" duration="58000" />
-      <workItem from="1614019455418" duration="245000" />
+      <workItem from="1614019455418" duration="440000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37062000" />
+    <option name="totallyTimeSpent" value="37257000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1545" height="915" extended-state="0" />
@@ -586,7 +586,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1614019693315" expanded="true" signature="0:5734" placeholder="..." />
+            <marker date="1614019895842" expanded="true" signature="0:5732" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -647,7 +647,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1614019693315" expanded="true" signature="0:5734" placeholder="..." />
+            <marker date="1614019895842" expanded="true" signature="0:5732" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -908,18 +908,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/solutions-journalism.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="75" column="30" selection-start-line="73" selection-start-column="24" selection-end-line="75" selection-end-column="30" />
+        <state relative-caret-position="120">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+        <state relative-caret-position="390">
+          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
           <folding>
-            <marker date="1614019693315" expanded="true" signature="0:5734" placeholder="..." />
+            <marker date="1614019895842" expanded="true" signature="0:5732" placeholder="..." />
           </folding>
         </state>
       </provider>
