@@ -13,7 +13,8 @@
 
   <div class="bg-white py-8 px-10 text-center rounded-md shadow-lg transform -translate-y-2 sm:-translate-y-8 max-w-xs mx-auto">
     <h2 class="font-thin text-xl mb-2">For your consideration</h2>
-    <img class="w-20 h-20 object-cover rounded-full mx-auto shadow-lg" src="https://images.unsplash.com/photo-1611342799915-5dd9f1665d04?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="User avatar">
+    <!--<img class="w-20 h-20 object-cover rounded-full mx-auto shadow-lg" src="https://images.unsplash.com/photo-1611342799915-5dd9f1665d04?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="User avatar">-->
+    <div><%= image_tag "/images/travis.png",  class: "w-24 h-24 object-cover rounded-full mx-auto shadow-lg" %></div>
     <p class="capitalize text-xl mt-1">Travis Glover</p>
     <!--<span class="flex items-center border rounded-full w-24 pr-2 justify-center mx-auto mt-2 mb-2"><div class="bg-green-400 rounded-full w-2.5 h-2.5 block mr-2"></div>Active</span>-->
     <!--<button class="rounded-md bg-gradient-to-r from-blue-400 to-indigo-500 text-xl text-white pt-3 pb-4 px-8 inline">More...</button>-->
@@ -33,30 +34,54 @@
               <div>
                 <div class="relative px-1">
                   <div class="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-white flex items-center justify-center">
-                    <svg class="text-white h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                    </svg>
+                    <span class="font-thin text-xl text-white">Q</span>
                   </div>
                 </div>
               </div>
               <div class="min-w-0 flex-1 py-0">
                 <div class="text-md text-gray-500">
                   <div>
-                    <a href="#" class="font-medium text-gray-900 mr-2">What was the goal/problem?</a>
+                    <span href="#" class="font-medium text-gray-900 mr-2">What was the goal/problem?</span>
 
-                    <div href="#" class="my-0.5 relative inline-flex items-center bg-white rounded-full border border-gray-300 px-3 py-0.5 text-sm">
-                      <div class="absolute flex-shrink-0 flex items-center justify-center">
-                        <span class="h-1.5 w-1.5 rounded-full bg-green-500" aria-hidden="true"></span>
-                      </div>
-                      <a class="ml-3.5 font-medium text-gray-900"></a>
-                      <a href="https://en.wikipedia.org/wiki/Multitenancy" target="_blank">Multitenancy</a>
-                    </div>
+
                   </div>
-                  <span class="whitespace-nowrap text-sm">dsasdahs</span>
+                  <!--<div href="#" class="my-0.5 relative inline-flex items-center bg-white rounded-full border border-gray-300 px-3 py-0.5 text-sm">-->
+                  <!--<div class="absolute flex-shrink-0 flex items-center justify-center">-->
+                  <!--<span class="h-1.5 w-1.5 rounded-full bg-green-500" aria-hidden="true"></span>-->
+                  <!--</div>-->
+                  <!--<a class="ml-3.5 font-medium text-gray-900"></a>-->
+                  <!--<a href="https://en.wikipedia.org/wiki/Multitenancy" target="_blank">Multitenancy</a>-->
+                  <!--</div>-->
                 </div>
                 <div class="mt-2 text-gray-700">
-                  <p>Well let me tell yah!!!!</p>
-
+                  <p>I made an application that allows users to build their own website. They do not need to have technical knowledge of how to build a website. Their website is live on the internet and ready for customization immediately after signing up.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="relative pb-8">
+            <span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
+            <div class="relative flex items-start space-x-3">
+              <div>
+                <div class="relative px-1">
+                  <div class="h-8 w-8 bg-purple-500 rounded-full ring-8 ring-white flex items-center justify-center">
+                    <span class="font-thin text-xl text-white">A</span>
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-0 flex-1 py-0">
+                <div class="text-md text-gray-500">
+                  <div>
+                    <span href="#" class="font-medium text-gray-900 mr-2">I didn't want to maintain each user's website as a separate application. To do this, I needed to figure out a way to acheive "multitenancy".</span>
+                  </div>
+                </div>
+                <br>
+                <div class="mt-2 text-gray-700">
+                  <p>The term multitenancy refers to a software architecture in which a single instance of software runs on a server and serves multiple tenants. Each users's data needed to be completely separate from one another. Each user shouldn't be able to edit other user's information, even though all the websites are running through the same application.
+                  </p>
+                  <br>
                   <hr>
                   <p></p>
                 </div>
@@ -64,6 +89,7 @@
             </div>
           </div>
         </li>
+
         <li>
           <div class="relative pb-8">
             <span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
@@ -71,28 +97,16 @@
               <div>
                 <div class="relative px-1">
                   <div class="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-white flex items-center justify-center">
-                    <svg class="text-white h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                    </svg>
+                    <span class="font-thin text-xl text-white">Q</span>
                   </div>
                 </div>
               </div>
               <div class="min-w-0 flex-1 py-0">
                 <div class="text-md text-gray-500">
                   <div>
-                    <a href="#" class="font-medium text-gray-900 mr-2">v3.1.0</a>
-
-                    <a href="#" class="my-0.5 relative inline-flex items-center bg-white rounded-full border border-gray-300 px-3 py-0.5 text-sm">
-                      <div class="absolute flex-shrink-0 flex items-center justify-center">
-                        <span class="h-1.5 w-1.5 rounded-full bg-green-500" aria-hidden="true"></span>
-                      </div>
-                      <div class="ml-3.5 font-medium text-gray-900">Feature</div>
-                    </a>
+                    <a href="#" class="font-medium text-gray-900 mr-2">What was your approach/solution?</a>
+                    <br><br>
                   </div>
-                  <span class="whitespace-nowrap text-sm">9h ago</span>
-                </div>
-                <div class="mt-2 text-gray-700">
-                  <p> This code is shown verbatim in order to be transparent (as a journalist can appreciate). However, I would like to direct your attention to just a couple lines of code.</p>
                 </div>
               </div>
             </div>
@@ -104,174 +118,55 @@
             <div class="relative flex items-start space-x-3">
               <div>
                 <div class="relative px-1">
-                  <div class="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-white flex items-center justify-center">
-                    <!--<svg class="text-white h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
-                      <!--<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />-->
-                    <!--</svg>-->
+                  <div class="h-8 w-8 bg-purple-500 rounded-full ring-8 ring-white flex items-center justify-center">
+                    <span class="font-thin text-xl text-white">A</span>
                   </div>
                 </div>
               </div>
               <div class="min-w-0 flex-1 py-0">
-                <div class="text-md text-gray-500">
-                  <div>
-                    <a href="#" class="font-medium text-gray-900 mr-2">v3.2.0</a>
-
-                    <a href="#" class="my-0.5 relative inline-flex items-center bg-white rounded-full border border-gray-300 px-3 py-0.5 text-sm">
-                      <div class="absolute flex-shrink-0 flex items-center justify-center">
-                        <span class="h-1.5 w-1.5 rounded-full bg-green-500" aria-hidden="true"></span>
-                      </div>
-                      <div class="ml-3.5 font-medium text-gray-900">Feature</div>
-                    </a>
-                  </div>
-                  <span class="whitespace-nowrap text-sm">10h ago</span>
-                </div>
                 <div class="mt-2 text-gray-700">
-                  <p>  Brief functional (not overly-technical) description of the project</p>
-
-                  <hr>
-                  <p>Sample Ruby code from an existing project of mine</p>
+                  <p>
+                    When a user signs up initially, they are able to choose their own subdomain.
+                    For example "solutionsjournalism" is the subdomain of solutionsjournalism.glovertravis.com.
+                    If they have a paid subscription, they can choose their own domain like "solutionsjournalism.com".
+                    Below is relevant code from the ApplicationController which shows how they are routed based on the domain.
+                    If it finds a match, it knows to display the solutionsjournalism website, instead of someone elses website.
+                    If no domain matches, it sends them back to a sign-up page. Once the proper domain is identified, it then stores this data in a session variable.
+                    Session variables in rails are encrypted by default and cannot be tampered with.
+                    All requests to the application inherit from the ApplicationController. Therefore it is impossible for someone to bypass this routing.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </li>
-
-
-        <li>
-          <div class="relative pb-8">
-            <span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
-            <div class="relative flex items-start space-x-3">
-              <div>
-                <div class="relative px-1">
-                  <div class="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-white flex items-center justify-center">
-                    <svg class="text-white h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="min-w-0 flex-1 py-0">
-                <div class="text-md text-gray-500">
-                  <div>
-                    <a href="#" class="font-medium text-gray-900 mr-2">v3.0.10</a>
-
-                    <a href="#" class="my-0.5 relative inline-flex items-center bg-white rounded-full border border-gray-300 px-3 py-0.5 text-sm">
-                      <div class="absolute flex-shrink-0 flex items-center justify-center">
-                        <span class="h-1.5 w-1.5 rounded-full bg-red-500" aria-hidden="true"></span>
-                      </div>
-                      <div class="ml-3.5 font-medium text-gray-900">Bug</div>
-                    </a>
-                  </div>
-                  <span class="whitespace-nowrap text-sm">6h ago</span>
-                </div>
-                <div class="mt-2 text-gray-700">
-                  <p>All requests to the website inherit from the ApplicationController. Therefore it is impossible for someone to bypass this security.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-
-
-
-
       </ul>
     </div>
   </div>
 
 </div>
 
-<div class="p-10">
-  <div class="mx-16 overflow-auto smalltext min-h-screen grid place-content-stretch self-center rounded-2xl p-10px">
-    <%= raw rouge_markdown(<<-'EOF'
+<div class="mx-12 overflow-auto smalltext grid place-content-stretch self-center rounded-2xl">
+  <%= raw rouge_markdown(<<-'EOF'
 ```ruby
 class ApplicationController < ActionController::Base
-  include SentientController
-  include Google::Webfonts::Helper
-
-  protect_from_forgery prepend: true, with: :exception
-  #load_and_authorize_resource unless: :devise_controller?
-  before_action :configure_permitted_parameters, if: :devise_controller?
-
   before_action :set_current_account
-  before_action :set_current_account_current
-  before_action :set_current_global
-  before_action :set_gon_variables
   helper_method :current_account
-  helper_method :current_global
+
   def current_account
     return unless session[:current_account_id]
     @current_account ||= Account.find(session[:current_account_id])
-  end
-
-  def set_gon_variables
-    gon.google_analytics_id = current_global.google_analytics_id
-  end
-
-  def current_global
-    return unless session[:current_global_id]
-    @current_global ||= Global.find(session[:current_global_id])
-  end
-
-  before_action do
-    resource = controller_name.singularize.to_sym
-    method = "#{resource}_params"
-    params[resource] &&= send(method) if respond_to?(method, true)
-  end
-
-  def respond_modal_with(*args, &blk)
-    options = args.extract_options!
-    options[:responder] = ModalResponder
-    respond_with *args, options, &blk
-  end
-
-  def custom_style
-    style = "color: #{current_global.theme_link_color};"
-    "#{style}"
-  end
-
-  def dhalang
-    binary_pdf = Dhalang::PDF.get_from_url("https://www.glovertravis.com")
-    send_data(binary_pdf, filename: 'pdfofgoogle.pdf', type: 'application/pdf')
-  end
-
-  def require_account!
-    redirect_to root_url(domain: nil) if current_account.nil?
   end
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to main_app.root_url, alert: exception.message
   end
 
-  rescue_from Braintree::ConfigurationError do |exception|
-    # exception.message
-    # edit_subscription_path(id: @current_account.subscriptions.last.id)
-    redirect_to main_app.root_url, alert: "You must link a bank account."
-  end
-
-  def after_sign_in_path_for(user)
-    subdomain = user.accounts.last.subdomain
-    if request.original_url.include?("#{Figaro.env.base_title}")
-      root_url(subdomain: subdomain)
-    else
-      root_url
-    end
-  end
-
-  protected
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :subdomain, :email, :phone, :country, :name, :current_account_id, account_attributes: [:domain]])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:edit_type, :first_name, :last_name, :subdomain, :email, :phone, :country,
-    bank_attributes: [:bank_name, :bank_account], account_attributes: [:domain]])
-  end
-
   private
-  def set_current_account_current
-    Current.account = current_account
-  end
+
   def set_current_account
     if current_user.present?
-      # if a user is signed in, use its account
+      # if a user is signed in, use the account associated with it
       current_account = current_user.accounts.last
     else
       # check if domain is present
@@ -300,45 +195,211 @@ class ApplicationController < ActionController::Base
     session[:current_account_id] = current_account.id
     # return current_account
   end
-  def set_current_global
-    session[:current_global_id] = current_account.global.id
-  end
-
 end
-
 ```
-            EOF
-            ) %>
+          EOF
+          ) %>
+</div>
+
+<div class="bg-white">
+  <div class="max-w-3xl mx-auto p-8 mb-10">
+    <div class="grid">
+      <ul class="-mb-8">
+
+        <li>
+          <div class="relative pb-8">
+            <span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
+            <div class="relative flex items-start space-x-3">
+              <div>
+                <div class="relative px-1">
+                  <div class="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-white flex items-center justify-center">
+                    <span class="font-thin text-xl text-white">Q</span>
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-0 flex-1 py-0">
+                <div class="text-md text-gray-500">
+                  <div>
+                    <span href="#" class="font-medium text-gray-900 mr-2">How do I make sure that they cant access or edit the information if they visit someone else's website on the server?</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="relative pb-8">
+            <span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
+            <div class="relative flex items-start space-x-3">
+              <div>
+                <div class="relative px-1">
+                  <div class="h-8 w-8 bg-purple-500 rounded-full ring-8 ring-white flex items-center justify-center">
+                    <span class="font-thin text-xl text-white">A</span>
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-0 flex-1 py-0">
+                <div class="text-md text-gray-500">
+                  <div>
+                    <span href="#" class="font-medium text-gray-900 mr-2">I use a ruby gem called "CanCanCan" for authorization.</span>
+                  </div>
+                </div>
+                <br>
+                <div class="mt-2 text-gray-700">
+                  <p>
+                    Each user has an "account" associated to it upon signing up. Every time a piece of content is created in the system by a user, an account_id is recorded in the database of that piece of content. This makes it easy to authenticate every piece of content requested by the system. If it doesn't match the account id associated with the signed in user (which is set in that session variable above) their request for that information is rejected.
+                    Here is a sample of some relevant code:
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 
+<div class="mx-12 overflow-auto smalltext grid place-content-stretch self-center rounded-2xl">
+  <%= raw rouge_markdown(<<-'EOF'
+```ruby
+class Ability
+  include CanCan::Ability
 
+  def initialize(user)
+    account = Current.account
 
+    if user.present?
+      # if a user is signed in
+      if user.role == "user"
+        can :manage, :all, account_id: user.account_id
+        cannot :manage, Account
+      end
+    else
+      # visitors to the site
+      can :read, :visitors
+      can :read, Cms::Page, account_id: account.id
+    end
+  end
+end
+```
+          EOF
+          ) %>
+</div>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<!--<script>-->
-<!--//  const likeButton = document.querySelector("#likeButton");-->
-<!--//  const addToCartButton = document.querySelector("#addToCartButton");-->
-<!--//  likeButton.addEventListener("click", ()=>{-->
-<!--//    likeButton.classList.toggle("text-red-400")-->
-<!--//  })-->
-<!--//  addToCartButton.addEventListener("click", ()=>{-->
-<!--//    const Toast = Swal.mixin({-->
-<!--//          toast: true,-->
-<!--//          position: 'top-end',-->
-<!--//          showConfirmButton: false,-->
-<!--//          timer: 3000,-->
-<!--//          timerProgressBar: true,-->
-<!--//          didOpen: (toast) => {-->
-<!--//          toast.addEventListener('mouseenter', Swal.stopTimer)-->
-<!--//    toast.addEventListener('mouseleave', Swal.resumeTimer)-->
-<!--//  }-->
-<!--//  })-->
-<!--//-->
-<!--//  Toast.fire({-->
-<!--//    icon: 'success',-->
-<!--//    title: 'Added to cart'-->
-<!--//  })-->
-<!--//  })-->
-<!--//-->
-<!--</script>-->
+<div class="bg-white">
+  <div class="max-w-3xl mx-auto p-8 mb-10">
+    <div class="grid">
+      <ul class="-mb-8">
+
+        <li>
+          <div class="relative pb-8">
+            <span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
+            <div class="relative flex items-start space-x-3">
+              <div>
+                <div class="relative px-1">
+                  <div class="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-white flex items-center justify-center">
+                    <span class="font-thin text-xl text-white">Q</span>
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-0 flex-1 py-0">
+                <div class="text-md text-gray-500">
+                  <div>
+                    <span href="#" class="font-medium text-gray-900 mr-2">Do you have experience working closely with non-technical colleagues in an environment where you were the only developer on the team?</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="relative pb-8">
+            <span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
+            <div class="relative flex items-start space-x-3">
+              <div>
+                <div class="relative px-1">
+                  <div class="h-8 w-8 bg-purple-500 rounded-full ring-8 ring-white flex items-center justify-center">
+                    <span class="font-thin text-xl text-white">A</span>
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-0 flex-1 py-0">
+                <div class="text-md text-gray-500">
+                  <div>
+                    <span href="#" class="font-medium text-gray-900 mr-2">Yes, extensively!</span>
+                  </div>
+                </div>
+                <br>
+                <div class="mt-2 text-gray-700">
+                  <p>
+                    During my 6 years working at Eminence Healthcare, over 5 of those years I was the sole developer.
+                    My supervisors were not technical people, but they were able to articulate what they wanted out of the application.
+                    It was up to me to come up with solutions and manage expectations.
+                    Interestingly enough, discussing technical solutions to non-technical people helps me understand and work through complex problems better.
+                    As Albert Einstein once said "If you can't explain it simply, you don't understand it well enough."
+                  </p>
+                  <br>
+                  <hr>
+                </div>
+                <br>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="-mb-8">
+
+        <li>
+          <div class="relative pb-8">
+            <span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
+            <div class="relative flex items-start space-x-3">
+              <div>
+                <div class="relative px-1">
+                  <div class="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-white flex items-center justify-center">
+                    <span class="font-thin text-xl text-white">Q</span>
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-0 flex-1 py-0">
+                <div class="text-md text-gray-500">
+                  <div>
+                    <span href="#" class="font-medium text-gray-900 mr-2">How do you feel about being the sole engineer at a mission-driven nonprofit?</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="relative pb-8">
+            <span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
+            <div class="relative flex items-start space-x-3">
+              <div>
+                <div class="relative px-1">
+                  <div class="h-8 w-8 bg-purple-500 rounded-full ring-8 ring-white flex items-center justify-center">
+                    <span class="font-thin text-xl text-white">A</span>
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-0 flex-1 py-0">
+                <div class="text-md text-gray-500">
+                  <div>
+                    <span href="#" class="font-medium text-gray-900 mr-2">Making a difference in society is extremely important to me in my career. I'd be honored to work somewhere where making a difference is more important than the company's bottom line.</span>
+                  </div>
+                </div>
+                <br>
+                <div class="mt-2 text-gray-700">
+                  <p>
+                    Beyond that, I feel that journalism is more important now than ever. There has never been more misinformation out there. Targeted and readily available. Journalism is essential in combating misinformation and providing truth and education.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
