@@ -54,7 +54,7 @@
                   <!--</div>-->
                 </div>
                 <div class="mt-2 text-gray-700">
-                  <p>I made an application that allows users to build their own website. They do not need to have technical knowledge of how to build a website. Their website is live on the internet and ready for customization immediately after signing up.</p>
+                  <p>I created an application which allows users to build their own website. Their website is live on the internet and ready for customization immediately after signing up.</p>
                 </div>
               </div>
             </div>
@@ -127,13 +127,12 @@
                 <div class="mt-2 text-gray-700">
                   <p>
                     When a user signs up initially, they are able to choose their own subdomain.
-                    For example "solutionsjournalism" is the subdomain of solutionsjournalism.glovertravis.com.
-                    If they have a paid subscription, they can choose their own domain like "solutionsjournalism.com".
-                    Below is relevant code from the ApplicationController which shows how they are routed based on the domain.
-                    If it finds a match, it knows to display the solutionsjournalism website, instead of someone elses website.
-                    If no domain matches, it sends them back to a sign-up page. Once the proper domain is identified, it then stores this data in a session variable.
-                    Session variables in rails are encrypted by default and cannot be tampered with.
-                    All requests to the application inherit from the ApplicationController. Therefore it is impossible for someone to bypass this routing.
+                    For example solutionsjournalism is the subdomain of solutionsjournalism.glovertravis.com.
+                    If they have a paid subscription, they can choose their own domain such as solutionsjournalism.com, if it is available.
+                    Below is some relevant code from the ApplicationController. It is responsible for displaying the proper website based on the requested domain.
+                    Once the domain is identified, it stores this data in a session variable.
+                    Session variables are encrypted by default and cannot be tampered with. This session variable is later used to authenticate the user requesting to view or edit any information.
+                    All requests to the application inherit from the ApplicationController, so isn't possible for someone to bypass where they are being routed to.
                   </p>
                 </div>
               </div>
@@ -247,7 +246,10 @@ end
                 <br>
                 <div class="mt-2 text-gray-700">
                   <p>
-                    Each user has an "account" associated to it upon signing up. Every time a piece of content is created in the system by a user, an account_id is recorded in the database of that piece of content. This makes it easy to authenticate every piece of content requested by the system. If it doesn't match the account id associated with the signed in user (which is set in that session variable above) their request for that information is rejected.
+                    Each user has an "account" associated to it upon signing up.
+                    Every time a piece of content is created in the system by a user, an account_id is recorded in the database of that piece of content.
+                    This makes it easy to authenticate every piece of content requested by the system.
+                    If it doesn't match the account id associated with the signed in user (which is set in that session variable above) their request for that information is rejected.
                     Here is a sample of some relevant code:
                   </p>
                 </div>
