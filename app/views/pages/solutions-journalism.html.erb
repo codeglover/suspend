@@ -104,7 +104,7 @@
               <div class="min-w-0 flex-1 py-0">
                 <div class="text-md text-gray-500">
                   <div>
-                    <a href="#" class="font-medium text-gray-900 mr-2">What was your approach/solution?</a>
+                    <span href="#" class="font-medium text-gray-900 mr-2">What was your approach/solution?</span>
                     <br><br>
                   </div>
                 </div>
@@ -182,13 +182,11 @@ class ApplicationController < ActionController::Base
         end
       end
       # if no domain found, check for subdomain
-      current_account = Account.find_by(subdomain: request.subdomain) if Account.all.pluck(:subdomain).include?(request.subdomain) if current_account.blank?
+      current_account = Account.find_by(subdomain: request.subdomain) if Account.all.pluck(:subdomain).include?(request.subdomain) && current_account.blank?
       # If no current_account found from either subdomain or domain
       if current_account.blank?
         account = Account.find(1)
-        if account.present?
-          current_account = account
-        end
+        current_account = account if account.present?
       end
     end
     session[:current_account_id] = current_account.id
@@ -219,7 +217,7 @@ end
               <div class="min-w-0 flex-1 py-0">
                 <div class="text-md text-gray-500">
                   <div>
-                    <span href="#" class="font-medium text-gray-900 mr-2">How do I make sure that they cant access or edit the information if they visit someone else's website on the server?</span>
+                    <span href="#" class="font-medium text-gray-900 mr-2">How do I make sure that they cant access or edit the information if they visit someone else's website domain on the server?</span>
                   </div>
                 </div>
               </div>
