@@ -93,9 +93,9 @@
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="29" column="48" selection-start-line="0" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+              <caret line="29" column="46" selection-start-line="0" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
               <folding>
-                <marker date="1614737638239" expanded="true" signature="2:5900" placeholder="..." />
+                <marker date="1614737868065" expanded="true" signature="0:5703" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -650,12 +650,12 @@
       <workItem from="1614019350914" duration="58000" />
       <workItem from="1614019455418" duration="15452000" />
       <workItem from="1614310496720" duration="1696000" />
-      <workItem from="1614736852207" duration="750000" />
+      <workItem from="1614736852207" duration="969000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54715000" />
+    <option name="totallyTimeSpent" value="54934000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1545" height="915" extended-state="0" />
@@ -753,7 +753,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1614737638239" expanded="true" signature="2:5900" placeholder="..." />
+            <marker date="1614737868065" expanded="true" signature="0:5703" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1038,9 +1038,9 @@
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="29" column="48" selection-start-line="0" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <caret line="29" column="46" selection-start-line="0" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
-            <marker date="1614737638239" expanded="true" signature="2:5900" placeholder="..." />
+            <marker date="1614737868065" expanded="true" signature="0:5703" placeholder="..." />
           </folding>
         </state>
       </provider>
