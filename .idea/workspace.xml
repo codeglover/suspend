@@ -59,7 +59,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connection.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="connection.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/channels/application_cable/connection.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -89,13 +89,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="production.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+            <state relative-caret-position="210">
+              <caret line="29" column="48" selection-start-line="0" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
               <folding>
-                <marker date="1614737332416" expanded="true" signature="0:5703" placeholder="..." />
+                <marker date="1614737638239" expanded="true" signature="2:5900" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -650,12 +650,12 @@
       <workItem from="1614019350914" duration="58000" />
       <workItem from="1614019455418" duration="15452000" />
       <workItem from="1614310496720" duration="1696000" />
-      <workItem from="1614736852207" duration="490000" />
+      <workItem from="1614736852207" duration="750000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54455000" />
+    <option name="totallyTimeSpent" value="54715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1545" height="915" extended-state="0" />
@@ -753,7 +753,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1614737332416" expanded="true" signature="0:5703" placeholder="..." />
+            <marker date="1614737638239" expanded="true" signature="2:5900" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1011,16 +1011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
-          <folding>
-            <marker date="1614737332416" expanded="true" signature="0:5703" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -1042,6 +1032,16 @@
         <state relative-caret-position="270">
           <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="29" column="48" selection-start-line="0" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding>
+            <marker date="1614737638239" expanded="true" signature="2:5900" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
