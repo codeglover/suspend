@@ -34,8 +34,8 @@ Rails.application.configure do
   config.active_storage.service = :local
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
-  # config.action_cable.url = 'wss://example.com/cable'
-  # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
+  # config.action_cable.url = 'wss://testing.glovertravis.com/cable'
+  # config.action_cable.allowed_request_origins = 'https://testing.glovertravis.com'
   # config.action_cable.url = 'ws://testing.glovertravis.com/cable' # ws:// is non-secure, wss:// is secure
   # config.action_cable.allowed_request_origins = [ 'http://testing.glovertravis.com' ]
   config.action_cable.disable_request_forgery_protection = true
